@@ -23,4 +23,4 @@ fix_date.py
 
 moving_average.py
 Usage: python3 moving_average.py <input_csv> <output_csv> <window_size>
-- requires a "Turnover" Column, which is orginally available ferom PosBoss reporting
+- requires a "Turnover" Column, which is orginally available from PosBoss reporting
