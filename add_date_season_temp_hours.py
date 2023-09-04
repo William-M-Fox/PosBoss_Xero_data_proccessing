@@ -1,8 +1,15 @@
 import pandas as pd
+import sys
 from datetime import datetime
 
+if len(sys.argv) != 3:
+    print("Usage: python3 add_date_season_temp.py <cash_ups_csv>  <output_file>")
+    sys.exit(1)
+
 # Load the CSV file into a pandas DataFrame
-data = pd.read_csv('cash_ups.csv')
+input_file = sys.argv[1]
+data = pd.read_csv(input_file)
+output_file = sys.argv[2]
 
 print("Loaded CSV data:")
 print(data.head())
@@ -54,7 +61,7 @@ print(data.head())
 import requests
 
 # Replace with your OpenWeatherMap API key
-api_key = '0d205887184326764bdb5e708a969909'
+api_key = 'enter your api key here'
 
 # Define the location (Dunedin, New Zealand)
 lat = -45.8788
@@ -103,4 +110,4 @@ for weather in weather_data:
 data['Daily_Avg_Temp'] = daily_temps
 
 # Save the modified DataFrame to a new CSV file
-data.to_csv('data_with_temperatures.csv', index=False)
+data.to_csv(output_file, index=False)
